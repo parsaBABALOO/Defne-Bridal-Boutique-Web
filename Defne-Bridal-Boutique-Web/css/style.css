@@ -1,0 +1,628 @@
+/*1. RESET & VARIABLES (Luxury Dark Theme Layout)*/
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', 'Segoe UI', serif;
+}
+
+:root {
+    --bg-dark: #070707;
+    --bg-card: #0d0d0d;
+    --gold-primary: #d4af37;
+    --gold-glow: rgba(212, 175, 55, 0.25);
+    --gold-hover: #f3e5ab;
+    --text-white: #ffffff;
+    --text-muted: #aaaaaa;
+    --border-color: rgba(214, 175, 55, 0.12);
+    --transition-smooth: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    overflow-x: hidden;
+    line-height: 1.7;
+    text-align: left;
+}
+
+/* ===============================
+   2. GLOBAL COMPONENTS & UTILITIES
+   ================================*/
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 4%;
+}
+
+.container-full-gray {
+    background-color: #0b0b0b;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 120px 6%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+}
+
+.section-title span {
+    color: var(--gold-primary);
+    font-weight: 600;
+}
+
+/* Standard Premium Buttons */
+.btn {
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    transition: var(--transition-smooth);
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-gold {
+    background-color: var(--gold-primary);
+    color: #000000;
+}
+
+.btn-gold:hover {
+    background-color: var(--gold-hover);
+    box-shadow: 0 10px 25px var(--gold-glow);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-outline:hover {
+    border-color: var(--gold-primary);
+    color: var(--gold-primary);
+    transform: translateY(-3px);
+}
+
+/* Scroll-Driven Reveal Base */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: var(--transition-smooth);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. FIXED GLASSMORPHISM HEADER
+   ========================================================================== */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(7, 7, 7, 0.75);
+    backdrop-filter: blur(20px) saturate(180%);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text h1 {
+    font-size: 22px;
+    color: #ffffff;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.logo-text p {
+    font-size: 9px;
+    color: var(--gold-primary);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-menu a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: var(--gold-primary);
+}
+
+/* ==========================================================================
+   4. CINEMATIC BACKGROUND HERO
+   ================================================================ */
+.hero-section {
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    margin-top: 0;
+}
+
+.hero-video-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(7, 7, 7, 1));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
+
+.hero-content h2 {
+    font-size: 4.2rem;
+    margin-bottom: 25px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 1.15;
+}
+
+.hero-content h2 span {
+    color: var(--gold-primary);
+    font-weight: 600;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 45px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   5. LONG-FORM PRESENTATION STORY & WHY CHOOSE US
+   ======================================================================= */
+.story-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.story-content span {
+    color: var(--gold-primary);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 11px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.story-content h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.story-content p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+.story-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 50px 40px;
+    border-radius: 20px;
+}
+
+.metric-card {
+    text-align: center;
+    border-bottom: 1px solid rgba(214, 175, 55, 0.05);
+    padding-bottom: 20px;
+}
+
+.metric-card:last-child {
+    border: none;
+    padding-bottom: 0;
+}
+
+.metric-card h4 {
+    font-size: 2.8rem;
+    color: var(--gold-primary);
+    font-weight: 400;
+}
+
+.metric-card p {
+    font-size: 11px;
+    color: var(--text-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+/* Why Choose Section Grid */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.why-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 50px 35px;
+    border-radius: 15px;
+    transition: var(--transition-smooth);
+}
+
+.why-card:hover {
+    border-color: var(--gold-primary);
+    transform: translateY(-5px);
+}
+
+.why-card span {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold-primary);
+    border-bottom: 1px solid var(--gold-primary);
+    padding-bottom: 5px;
+}
+
+.why-card h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 25px 0 15px;
+    letter-spacing: 1px;
+}
+
+.why-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ==============================================
+   6. LARGE GRID LOOKBOOK GALLERY & HOVER STATES
+   ========================================================================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 45px;
+}
+
+.gallery-item.large {
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.gallery-item.large:hover {
+    border-color: var(--gold-primary);
+    transform: translateY(-6px);
+}
+
+.dress-container {
+    width: 100%;
+    height: 480px;
+    background: linear-gradient(180deg, #111111 0%, #161616 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.dress-artwork {
+    width: 180px;
+    height: 380px;
+    transition: var(--transition-smooth);
+}
+
+.gallery-item.large:hover .dress-artwork {
+    transform: scale(1.04);
+}
+
+.hover-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(7, 7, 7, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition-smooth);
+}
+
+.hover-overlay span {
+    color: var(--gold-primary);
+    border: 1px solid var(--gold-primary);
+    padding: 12px 24px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.gallery-item.large:hover .hover-overlay {
+    opacity: 1;
+}
+
+.item-info {
+    padding: 30px;
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.item-info h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.item-tag {
+    color: var(--gold-primary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+}
+
+.item-fabric {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* 
+   7. FULLSCREEN MODAL LIGHTBOX SYSTEM
+    */
+.lightbox-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(20px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.lightbox-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-content {
+    background: #0d0d0d;
+    border: 1px solid var(--border-color);
+    width: 92%;
+    max-width: 1000px;
+    border-radius: 24px;
+    position: relative;
+    padding: 50px;
+    transform: scale(0.95);
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.lightbox-modal.active .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px; right: 30px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 40px;
+    cursor: pointer;
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.lightbox-close:hover {
+    color: var(--gold-primary);
+}
+
+.lightbox-body {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.lightbox-visual {
+    background: #141414;
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.lightbox-details span {
+    color: var(--gold-primary);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    display: block;
+}
+
+.lightbox-details h2 {
+    font-size: 2.6rem;
+    font-weight: 300;
+    margin: 12px 0 20px;
+    line-height: 1.2;
+}
+
+.lightbox-details p.mat {
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 18px;
+}
+
+.lightbox-details p.desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* =======================================================
+   8. FORM, CONTACT GRID & FOOTER
+   ========================================================== */
+.booking-wrapper {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gold-primary);
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    padding: 16px 20px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 15px;
+    transition: var(--transition-smooth);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--gold-primary);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.contact-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 50px 35px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.contact-card.highlight {
+    background: linear-gradient(135deg, var(--gold-primary) 0%, #b3922e 100%);
+    color: #000000;
+    border: none;
+}
+
+.contact-card.highlight h3 { color: #000000; }
+.contact-card.highlight .val { color: #000000; }
+
+.contact-card h3 { font-size: 1.5rem; font-weight: 400; margin-bottom: 15px; }
+.contact-card .val { font-size: 1.25rem; font-weight: 700; color: var(--gold-primary); }
+
+.main-footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 13px;
+    background-color: #040404;
+    letter-spacing: 0.5px;
+}
+
+.main-footer span {
+    color: var(--gold-primary);
+}
+
+/* ==========================================================================
+   9. RESPONSIVE DISPLAYS (Mobile Framework)
+   ====================================================== */
+@media (max-width: 992px) {
+    .hero-content h2 { font-size: 3rem; }
+    .story-wrapper, .lightbox-body { grid-template-columns: 1fr; gap: 40px; }
+    .lightbox-content { padding: 40px 25px; }
+}
+
+@media (max-width: 768px) {
+    .main-header { flex-direction: column; gap: 15px; text-align: center; padding: 15px 5%; }
+    .nav-menu ul { gap: 20px; }
+    .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .dress-container { height: 400px; }
+}
+
