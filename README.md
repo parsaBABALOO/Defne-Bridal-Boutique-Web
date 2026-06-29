@@ -29,7 +29,7 @@
 ## 📂 Directory Blueprint
 
 ```text
-defne-bridal-boutique/
+Defne-Bridal-Boutique-Web/
 │
 ├── css/
 │   └── style.css            # Custom premium typography, grid systems & motion drivers
