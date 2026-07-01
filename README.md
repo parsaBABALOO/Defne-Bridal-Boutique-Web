@@ -64,4 +64,14 @@ This project is officially licensed under the MIT License. You are completely fr
 
 ---
 
+📬 Contact
+Developer: Parsa Babaloo
+The only way to contact the developer is via email:
+
+Email: parsababalo1403@gmail.com
+
+Any other contact methods, accounts, or channels claiming association with this project are unofficial and should be ignored.
+
+---
+
 ⭐ If this project helped you, please give it a star! ⭐
