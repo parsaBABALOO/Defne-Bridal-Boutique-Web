@@ -63,14 +63,11 @@ Navigate through index.html to review the entire seamless luxury flow.
 This project is officially licensed under the MIT License. You are completely free to modify, build upon, or integrate this elite UI structure into your own commercial and non-commercial workflows, provided the original authorship credit remains intact.
 
 ---
+## 📬 Contact
 
-📬 Contact
-Developer: Parsa Babaloo
-The only way to contact the developer is via email:
+Developer: PARSA BABALOO Email: parsababalo1403@gmail.com
 
-Email: parsababalo1403@gmail.com
-
-Any other contact methods, accounts, or channels claiming association with this project are unofficial and should be ignored.
+Note: Any other contact information (including Telegram channels or usernames) associated with this project is not official and should be considered invalid or unrelated to the developer.
 
 ---
 
